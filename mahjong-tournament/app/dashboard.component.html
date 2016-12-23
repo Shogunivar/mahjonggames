@@ -1,0 +1,9 @@
+<h3>Last games</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let game of games" (click)="gotoDetail(game)" class="col-1-4">
+    <div class="module game">
+      <h4>{{game.gamename}}</h4>
+    </div>
+  </div>
+</div>
+

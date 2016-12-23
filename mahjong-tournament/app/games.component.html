@@ -1,0 +1,31 @@
+<h2>Games</h2>
+<ul class="games">
+  <li *ngFor="let game of games" (click)="onSelect(game)" [class.selected]="hero === selectedGame">
+    <span class="game-element">
+      <span class="badge">{{game.id}} : {{game.gamename}}</span> 
+    </span>
+    <button class="delete-button" (click)="deleteGame(game, $event)">Delete</button>
+  </li>
+</ul>
+
+<div class="error" *ngIf="error">{{error}}</div>
+<button (click)="addGame()">Start a new game</button>
+<div *ngIf="addingGame">
+  <my-game-detail (close)="close($event)"></my-game-detail>
+</div>
+
+<div *ngIf="selectedGame">
+  <h2>
+    {{selectedGame.gamename | uppercase}}
+  </h2>
+    <div>id: {{selectedGame.id}}</div>
+    <div>Name: {{selectedGame.gamename}}</div>
+    <strong>Ranking:</strong>
+    <div>
+      1: {{selectedGame.rank1.user.name}} [{{selectedGame.rank1.user.country}}] Score: {{selectedGame.rank1.Score}}||
+      2: {{selectedGame.rank2.user.name}} [{{selectedGame.rank2.user.country}}] Score: {{selectedGame.rank2.Score}}||
+      3: {{selectedGame.rank3.user.name}} [{{selectedGame.rank3.user.country}}] Score: {{selectedGame.rank3.Score}}||
+      4: {{selectedGame.rank4.user.name}} [{{selectedGame.rank4.user.country}}] Score: {{selectedGame.rank4.Score}}
+    </div>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

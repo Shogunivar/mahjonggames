@@ -1,0 +1,46 @@
+<div *ngIf="game">
+  <h2>New game</h2>
+  <div>
+	<label>id: </label>{{game.id}}
+   </div>
+    <label>Game name: </label>
+    <input [(ngModel)]="game.gamename" placeholder="name" />
+  <div>
+	<label>First: </label>
+  	<strong>Username: </strong>
+  	<input [(ngModel)]="game.rank1.user.name" placeholder="username" />
+  	<strong>Country: </strong>
+  	<input [(ngModel)]="game.rank1.user.country" placeholder="country" />
+  	<strong>Score: </strong>
+  	<input [(ngModel)]="game.rank1.Score" placeholder="Score" type="number" />
+  </div>
+  <div>
+	<label>Second: </label>
+  	<strong>Username: </strong>
+  	<input [(ngModel)]="game.rank2.user.name" placeholder="username" />
+  	<strong>Country: </strong>
+  	<input [(ngModel)]="game.rank2.user.country" placeholder="country" />
+  	<strong>Score: </strong>
+  	<input [(ngModel)]="game.rank2.Score" placeholder="Score" type="number" />
+  </div>
+   <div>
+	<label>First: </label>
+  	<strong>Username: </strong>
+  	<input [(ngModel)]="game.rank3.user.name" placeholder="username" />
+  	<strong>Country: </strong>
+  	<input [(ngModel)]="game.rank3.user.country" placeholder="country" />
+  	<strong>Score: </strong>
+  	<input [(ngModel)]="game.rank3.Score" placeholder="Score" type="number" />
+  </div>
+   <div>
+	<label>First: </label>
+  	<strong>Username: </strong>
+  	<input [(ngModel)]="game.rank4.user.name" placeholder="username" />
+  	<strong>Country: </strong>
+  	<input [(ngModel)]="game.rank4.user.country" placeholder="country" />
+  	<strong>Score: </strong>
+  	<input [(ngModel)]="game.rank4.Score" placeholder="Score" type="number" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
